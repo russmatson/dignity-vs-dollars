@@ -329,9 +329,9 @@ function renderChoices() {
 }
 
 function getIntervention(dignity) {
-  if (dignity >= 50) return null;
-  // 65% chance of intervention when below 50, higher chance at lower dignity
-  const chance = dignity < 20 ? 0.9 : dignity < 35 ? 0.75 : 0.55;
+  if (dignity >= 75) return null;
+  // Very high chance of intervention — near-certain at low dignity
+  const chance = dignity < 20 ? 0.99 : dignity < 35 ? 0.95 : dignity < 50 ? 0.88 : 0.78;
   if (Math.random() > chance) return null;
   const type = Math.random() < 0.5 ? 'church' : 'state';
   const pool = INTERVENTIONS[type];
