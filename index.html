@@ -329,9 +329,14 @@ function renderChoices() {
 }
 
 function getIntervention(dignity) {
-  if (dignity >= 75) return null;
-  // Very high chance of intervention — near-certain at low dignity
-  const chance = dignity < 20 ? 0.99 : dignity < 35 ? 0.95 : dignity < 50 ? 0.88 : 0.78;
+  // Guaranteed intervention by round 3 no matter what
+  if (state.round >= 3) {
+    // Always fires from round 3 onward
+  } else if (dignity >= 75) {
+    return null; // Rounds 1-2 only skip if dignity is still high
+  }
+  // Near-certain at low dignity, still very likely at high dignity
+  const chance = dignity < 20 ? 0.99 : dignity < 35 ? 0.95 : dignity < 50 ? 0.88 : dignity < 75 ? 0.82 : 0.75;
   if (Math.random() > chance) return null;
   const type = Math.random() < 0.5 ? 'church' : 'state';
   const pool = INTERVENTIONS[type];
