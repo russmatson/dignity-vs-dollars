@@ -6,9 +6,7 @@
 <title>I Lower My Dignity to Increase My Bank Account</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;900&display=swap');
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
     background: #0d0d0d;
     color: #f0e6d3;
@@ -20,7 +18,6 @@
     padding: 20px;
     background-image: radial-gradient(ellipse at top, #1a0a2e 0%, #0d0d0d 70%);
   }
-
   h1 {
     font-family: 'Bangers', cursive;
     font-size: clamp(1.5rem, 4vw, 2.8rem);
@@ -31,278 +28,103 @@
     margin-bottom: 8px;
     line-height: 1.1;
   }
-
-  .subtitle {
-    font-size: 0.85rem;
-    color: #aaa;
-    margin-bottom: 16px;
-    text-align: center;
-    font-style: italic;
-  }
-
-  .stats-bar {
-    display: flex;
-    gap: 16px;
-    width: 100%;
-    max-width: 700px;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
-  }
-
-  .stat-box {
-    flex: 1;
-    min-width: 140px;
-    background: #1a1a2e;
-    border: 2px solid #444;
-    border-radius: 12px;
-    padding: 10px 14px;
-  }
-
-  .stat-label {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #888;
-    margin-bottom: 4px;
-  }
-
-  .stat-value {
-    font-size: 1.4rem;
-    font-weight: 900;
-    color: #ffd700;
-  }
-
-  .dignity-section { flex: 2; min-width: 200px; }
-
-  .dignity-label-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 4px;
-  }
-
-  .dignity-bar-bg {
-    background: #333;
-    border-radius: 8px;
-    height: 20px;
-    overflow: hidden;
-    border: 1px solid #555;
-  }
-
-  .dignity-bar-fill {
-    height: 100%;
-    border-radius: 8px;
-    transition: width 0.5s ease, background 0.5s ease;
-  }
-
-  .dignity-emoji {
-    font-size: 1.1rem;
-    margin-left: 6px;
-  }
-
-  .message-box {
-    width: 100%;
-    max-width: 700px;
-    background: #1a1a2e;
-    border: 2px solid #ffd700;
-    border-radius: 12px;
-    padding: 12px 16px;
-    margin-bottom: 14px;
-    min-height: 54px;
-    font-size: 0.95rem;
-    line-height: 1.4;
-    color: #f0e6d3;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .round-info {
-    font-size: 0.8rem;
-    color: #888;
-    margin-bottom: 12px;
-    text-align: center;
-  }
-
-  .choices-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
-    width: 100%;
-    max-width: 700px;
-    margin-bottom: 20px;
-  }
-
-  .choice-btn {
-    background: linear-gradient(135deg, #1e1e3f, #16213e);
-    border: 2px solid #444;
-    border-radius: 14px;
-    padding: 14px 12px;
-    cursor: pointer;
-    text-align: left;
-    transition: all 0.2s ease;
-    color: #f0e6d3;
-    font-family: 'Nunito', sans-serif;
-  }
-
-  .choice-btn:hover:not(:disabled) {
-    border-color: #ffd700;
-    background: linear-gradient(135deg, #2e2e5f, #26314e);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
-  }
-
-  .choice-btn:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-  }
-
-  .choice-name {
-    font-weight: 900;
-    font-size: 0.95rem;
-    color: #ffd700;
-    margin-bottom: 4px;
-  }
-
-  .choice-desc {
-    font-size: 0.78rem;
-    color: #bbb;
-    margin-bottom: 8px;
-    line-height: 1.3;
-  }
-
-  .choice-tags {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-
-  .tag {
-    font-size: 0.7rem;
-    padding: 2px 7px;
-    border-radius: 20px;
-    font-weight: 700;
-  }
-
-  .tag-money { background: #1a4a1a; color: #6dff6d; border: 1px solid #4aaa4a; }
-  .tag-dignity { background: #4a1a1a; color: #ff8080; border: 1px solid #aa4a4a; }
-
-  .btn-next {
-    background: linear-gradient(135deg, #ffd700, #ff8c00);
-    color: #000;
-    border: none;
-    border-radius: 12px;
-    padding: 14px 40px;
-    font-size: 1rem;
-    font-weight: 900;
-    font-family: 'Nunito', sans-serif;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: none;
-    margin-bottom: 16px;
-  }
-
-  .btn-next:hover { transform: scale(1.05); box-shadow: 0 4px 20px rgba(255,215,0,0.4); }
-
-  .btn-restart {
-    background: linear-gradient(135deg, #8b0000, #cc0000);
-    color: #fff;
-    border: none;
-    border-radius: 12px;
-    padding: 14px 40px;
-    font-size: 1rem;
-    font-weight: 900;
-    font-family: 'Nunito', sans-serif;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: none;
-    margin-bottom: 16px;
-  }
-
-  .btn-restart:hover { transform: scale(1.05); }
-
-  .music-btn {
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
-    background: #1a1a2e;
-    border: 2px solid #555;
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    font-size: 1.3rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s;
-    z-index: 100;
-    color: #ffd700;
-  }
-  .music-btn:hover { border-color: #ffd700; transform: scale(1.1); }
-
-  .music-credit {
-    font-size: 0.7rem;
-    color: #666;
-    text-align: center;
-    margin-top: -10px;
-    margin-bottom: 14px;
-  }
-
+  .subtitle { font-size: 0.85rem; color: #aaa; margin-bottom: 6px; text-align: center; font-style: italic; }
+  .music-credit { font-size: 0.7rem; color: #666; text-align: center; margin-bottom: 14px; }
   .music-credit a { color: #888; text-decoration: none; }
   .music-credit a:hover { color: #ffd700; }
-
+  .stats-bar { display: flex; gap: 16px; width: 100%; max-width: 700px; margin-bottom: 16px; flex-wrap: wrap; }
+  .stat-box { flex: 1; min-width: 140px; background: #1a1a2e; border: 2px solid #444; border-radius: 12px; padding: 10px 14px; }
+  .stat-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-bottom: 4px; }
+  .stat-value { font-size: 1.4rem; font-weight: 900; color: #ffd700; }
+  .dignity-section { flex: 2; min-width: 200px; }
+  .dignity-label-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+  .dignity-bar-bg { background: #333; border-radius: 8px; height: 20px; overflow: hidden; border: 1px solid #555; }
+  .dignity-bar-fill { height: 100%; border-radius: 8px; transition: width 0.5s ease, background 0.5s ease; }
+  .dignity-tier-badge {
+    font-size: 0.68rem; font-weight: 900; padding: 2px 8px; border-radius: 20px;
+    margin-left: 6px; text-transform: uppercase; letter-spacing: 1px;
+  }
+  .tier-high { background: #1a4a1a; color: #6dff6d; border: 1px solid #4aaa4a; }
+  .tier-mid  { background: #4a3a0a; color: #ffc84a; border: 1px solid #aa8a2a; }
+  .tier-low  { background: #4a0a0a; color: #ff6060; border: 1px solid #aa2a2a; }
+  .message-box {
+    width: 100%; max-width: 700px; background: #1a1a2e; border: 2px solid #ffd700;
+    border-radius: 12px; padding: 12px 16px; margin-bottom: 14px; min-height: 54px;
+    font-size: 0.95rem; line-height: 1.4; color: #f0e6d3; text-align: center;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .round-info { font-size: 0.8rem; color: #888; margin-bottom: 12px; text-align: center; }
+  .choices-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px; width: 100%; max-width: 700px; margin-bottom: 20px;
+  }
+  .choice-btn {
+    background: linear-gradient(135deg, #1e1e3f, #16213e);
+    border: 2px solid #444; border-radius: 14px; padding: 14px 12px;
+    cursor: pointer; text-align: left; transition: all 0.2s ease; color: #f0e6d3;
+    font-family: 'Nunito', sans-serif;
+  }
+  .choice-btn:hover:not(:disabled) {
+    border-color: #ffd700; background: linear-gradient(135deg, #2e2e5f, #26314e);
+    transform: translateY(-2px); box-shadow: 0 4px 15px rgba(255,215,0,0.2);
+  }
+  .choice-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .choice-name { font-weight: 900; font-size: 0.95rem; color: #ffd700; margin-bottom: 4px; }
+  .choice-desc { font-size: 0.78rem; color: #bbb; margin-bottom: 8px; line-height: 1.3; }
+  .choice-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tag { font-size: 0.7rem; padding: 2px 7px; border-radius: 20px; font-weight: 700; }
+  .tag-money { background: #1a4a1a; color: #6dff6d; border: 1px solid #4aaa4a; }
+  .tag-dignity { background: #4a1a1a; color: #ff8080; border: 1px solid #aa4a4a; }
+  .tag-dignity-gain { background: #1a4a1a; color: #6dff6d; border: 1px solid #4aaa4a; }
+  .tier-hint {
+    font-size: 0.66rem; color: #777; font-style: italic;
+    margin-top: 6px; border-top: 1px solid #333; padding-top: 5px;
+  }
+  .btn-next {
+    background: linear-gradient(135deg, #ffd700, #ff8c00); color: #000;
+    border: none; border-radius: 12px; padding: 14px 40px; font-size: 1rem;
+    font-weight: 900; font-family: 'Nunito', sans-serif; cursor: pointer;
+    transition: all 0.2s; display: none; margin-bottom: 16px;
+  }
+  .btn-next:hover { transform: scale(1.05); box-shadow: 0 4px 20px rgba(255,215,0,0.4); }
+  .btn-restart {
+    background: linear-gradient(135deg, #8b0000, #cc0000); color: #fff;
+    border: none; border-radius: 12px; padding: 14px 40px; font-size: 1rem;
+    font-weight: 900; font-family: 'Nunito', sans-serif; cursor: pointer;
+    transition: all 0.2s; display: none; margin-bottom: 16px;
+  }
+  .btn-restart:hover { transform: scale(1.05); }
+  .music-btn {
+    position: fixed; bottom: 16px; right: 16px; background: #1a1a2e;
+    border: 2px solid #555; border-radius: 50%; width: 48px; height: 48px;
+    font-size: 1.3rem; cursor: pointer; display: flex; align-items: center;
+    justify-content: center; transition: all 0.2s; z-index: 100; color: #ffd700;
+  }
+  .music-btn:hover { border-color: #ffd700; transform: scale(1.1); }
   .end-screen {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    max-width: 700px;
-    gap: 12px;
+    display: none; flex-direction: column; align-items: center;
+    text-align: center; width: 100%; max-width: 700px; gap: 12px;
   }
-
-  .end-title {
-    font-family: 'Bangers', cursive;
-    font-size: 3rem;
-    letter-spacing: 3px;
-    text-shadow: 3px 3px 0 #000;
-  }
-
+  .end-title { font-family: 'Bangers', cursive; font-size: 3rem; letter-spacing: 3px; text-shadow: 3px 3px 0 #000; }
   .end-title.win { color: #ffd700; }
   .end-title.lose { color: #ff4444; }
-
   .end-summary {
-    background: #1a1a2e;
-    border: 2px solid #555;
-    border-radius: 14px;
-    padding: 20px 28px;
-    line-height: 1.8;
-    font-size: 0.95rem;
+    background: #1a1a2e; border: 2px solid #555; border-radius: 14px;
+    padding: 20px 28px; line-height: 1.8; font-size: 0.95rem;
   }
-
   .history-log {
-    width: 100%;
-    max-width: 700px;
-    background: #111;
-    border: 1px solid #333;
-    border-radius: 10px;
-    padding: 12px;
-    font-size: 0.75rem;
-    color: #888;
-    max-height: 160px;
-    overflow-y: auto;
-    line-height: 1.7;
+    width: 100%; max-width: 700px; background: #111; border: 1px solid #333;
+    border-radius: 10px; padding: 12px; font-size: 0.75rem; color: #888;
+    max-height: 160px; overflow-y: auto; line-height: 1.7;
   }
-
   .log-entry { border-bottom: 1px solid #222; padding: 2px 0; }
   .log-entry:last-child { border-bottom: none; }
   .log-money { color: #6dff6d; }
   .log-dignity { color: #ff8080; }
-
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
-  .pulsing { animation: pulse 1s infinite; }
+  .reaction-tier-label {
+    font-size: 0.7rem; font-weight: 900; padding: 1px 6px; border-radius: 10px;
+    display: inline-block; margin-right: 4px; vertical-align: middle;
+  }
 </style>
 </head>
 <body>
@@ -318,7 +140,9 @@
   </div>
   <div class="stat-box dignity-section">
     <div class="dignity-label-row">
-      <div class="stat-label">🪞 Dignity Meter</div>
+      <div class="stat-label">🪞 Dignity
+        <span class="dignity-tier-badge tier-high" id="tier-badge">Dignified</span>
+      </div>
       <div class="stat-label" id="dignity-pct">100%</div>
     </div>
     <div class="dignity-bar-bg">
@@ -332,159 +156,162 @@
 </div>
 
 <div class="message-box" id="message-box">Welcome, desperate soul. You have bills to pay and zero shame left. Choose wisely — or don't.</div>
-
-<div class="round-info" id="round-info">Pick one action this round</div>
-
+<div class="round-info" id="round-info">Round 1 of 8 — pick one action</div>
 <div class="choices-grid" id="choices-grid"></div>
-
 <button class="btn-next" id="btn-next" onclick="nextRound()">Next Round ▶</button>
 <button class="btn-restart" id="btn-restart" onclick="restartGame()">Play Again 🔄</button>
-
 <div class="end-screen" id="end-screen">
   <div class="end-title" id="end-title"></div>
   <div class="end-summary" id="end-summary"></div>
 </div>
-
 <div class="history-log" id="history-log"></div>
-
 <button class="music-btn" id="music-btn" onclick="toggleMusic()" title="Toggle music">🎵</button>
-
 <audio id="bg-music" loop>
   <source src="https://cdn1.suno.ai/9913b15a-1999-4bc6-a792-83e9b97e10ed.webm" type="audio/webm">
 </audio>
 
 <script>
+// Each choice has 3 tiers keyed by dignity level:
+//   high: dignity > 60  (still has standards, feels the shame)
+//   mid:  dignity 20-60 (getting used to it, a bit numb)
+//   low:  dignity < 20  (shameless, brazen, actually better at this now)
+// Each tier has: money, dignity (delta), reaction text
+
 const CHOICES = [
   {
     name: "Dance at a Grocery Store",
     desc: "Bust a full choreographed routine in the cereal aisle for tips. Film it. Post it.",
-    money: 120,
-    dignity: -8,
-    reaction: "You cleared the cereal aisle. A kid gave you a quarter and called you 'the weird man.'"
+    high: { money: 90,  dignity: -10, reaction: "You cleared the aisle. A kid gave you a quarter and mouthed 'why.' You drove home in silence, deeply reconsidering your life." },
+    mid:  { money: 150, dignity: -8,  reaction: "The video got 4,000 views. You felt a flicker of pride before remembering what you were doing." },
+    low:  { money: 240, dignity: -5,  reaction: "You've done this enough that you have a signature move now. A brand reached out. You said yes immediately." }
   },
   {
     name: "Reply-Guy a Celebrity",
     desc: "Spend the day being the most enthusiastic commenter on a famous person's posts hoping for a follow.",
-    money: 0,
-    dignity: -15,
-    reaction: "Zero money. Zero follow. But 4 people replied 'cringe' and now you're briefly internet-famous for the wrong reasons."
+    high: { money: 0,   dignity: -18, reaction: "Zero money. Zero follow. Your coworker saw it. You took a long lunch to stare at a wall." },
+    mid:  { money: 20,  dignity: -12, reaction: "Someone paid you $20 to do it for their account instead. You didn't ask questions. You did it." },
+    low:  { money: 80,  dignity: -5,  reaction: "At this point you're basically a reply-guy-for-hire. You've got regulars. It's a service." }
   },
   {
     name: "Eat Disgusting Food on Camera",
-    desc: "Stream yourself eating a gas station sushi and a can of spray cheese. Monetize the suffering.",
-    money: 380,
-    dignity: -22,
-    reaction: "The cheese-sushi combo broke 2,000 viewers. Your stomach is staging a revolt but the money is real."
+    desc: "Stream yourself eating gas station sushi and spray cheese. Monetize the suffering.",
+    high: { money: 280, dignity: -25, reaction: "2,000 viewers. Someone donated $10 with the message 'don't stop.' You are reconsidering all of your choices." },
+    mid:  { money: 420, dignity: -18, reaction: "You've numbed your gag reflex. The chat loves it. The sponsorship offer from a hot sauce brand is real." },
+    low:  { money: 580, dignity: -8,  reaction: "You barely tasted it. You've transcended disgust. You are the content. The donations rolled in like rain." }
   },
   {
     name: "Be an MLM Hype Person",
     desc: "Attend a 'business opportunity' meeting and aggressively pitch essential oils to your family.",
-    money: 200,
-    dignity: -30,
-    reaction: "Your cousin blocked you. Your aunt bought two bottles out of pity. You're in the black, barely."
+    high: { money: 120, dignity: -35, reaction: "Your aunt bought two bottles out of pity. Your cousin blocked you. You made money. The shame is enormous." },
+    mid:  { money: 200, dignity: -22, reaction: "You've gotten better at not noticing the eye rolls. You sold four kits. You sleep fine, mostly." },
+    low:  { money: 310, dignity: -10, reaction: "You showed up in a blazer and closed six deals. You've completely forgotten what normal conversation feels like." }
   },
   {
     name: "Freelance 'Inspirational Speaker'",
     desc: "Show up at a local business breakfast and give a 10-minute talk called 'Winning: A Journey.'",
-    money: 150,
-    dignity: -12,
-    reaction: "Nobody asked follow-up questions. But the free muffins were excellent and they paid cash."
+    high: { money: 100, dignity: -14, reaction: "Nobody asked follow-up questions. The organizer said 'thanks for coming' very quietly. You took a muffin and left." },
+    mid:  { money: 175, dignity: -9,  reaction: "One person came up afterward and said you were 'interesting.' You took it. You'll take it." },
+    low:  { money: 280, dignity: -3,  reaction: "You've refined the talk. You added a slide. Someone booked you for a corporate lunch. You felt nothing and said yes." }
   },
   {
     name: "Hold a Sad Yard Sale",
     desc: "Drag your belongings to the curb and defend your prices to strangers who offer $1 for everything.",
-    money: 95,
-    dignity: -6,
-    reaction: "Sold your old treadmill for $20. It hurts, but rent is rent."
+    high: { money: 70,  dignity: -8,  reaction: "You sold your old treadmill for $20. A neighbor recognized you. You pretended not to hear them say 'oh no.'" },
+    mid:  { money: 110, dignity: -5,  reaction: "You've stopped being attached to things. It's almost zen. Almost. You made decent money and only cried once." },
+    low:  { money: 160, dignity: -2,  reaction: "You sold everything with a smile. You haggled confidently. You don't even know what you used to own. Freedom, kind of." }
   },
   {
-    name: "Be a Human Billboard",
-    desc: "Walk around downtown with a sandwich board advertising a mattress shop. Wear sunglasses so no one recognizes you.",
-    money: 180,
-    dignity: -18,
-    reaction: "Three people took photos. One was your ex. The sunglasses did not help."
+    name: "Human Billboard",
+    desc: "Walk around downtown with a sandwich board. Wear sunglasses so no one recognizes you.",
+    high: { money: 130, dignity: -20, reaction: "Three people took photos. One was your ex. The sunglasses did not help. They waved. You did not wave back." },
+    mid:  { money: 190, dignity: -12, reaction: "You developed a route. You got faster. The mattress shop offered you more hours. You said 'maybe.'" },
+    low:  { money: 260, dignity: -5,  reaction: "You've started improvising sales pitches to strangers. You closed two deals for them. They gave you a bonus." }
   },
   {
     name: "Peddle Bootleg Merch",
     desc: "Show up at a local concert selling knockoff t-shirts out of a duffel bag.",
-    money: 320,
-    dignity: -20,
-    reaction: "Sold 12 shirts before security noticed. You sprinted two blocks. Worth it."
+    high: { money: 200, dignity: -22, reaction: "Sold 8 shirts before security noticed. You sprinted. Your heart hammered. You made money and hated yourself just enough." },
+    mid:  { money: 320, dignity: -15, reaction: "You've learned where security blind spots are. You sold 14 shirts and were gone before the opener finished." },
+    low:  { money: 460, dignity: -6,  reaction: "You have a supplier now. You have regulars. You have a preferred exit strategy. This is your business." }
   },
   {
     name: "Pet Psychic Services",
-    desc: "Advertise on Craigslist that you can communicate with pets spiritually. Charge $40 per reading.",
-    money: 160,
-    dignity: -25,
-    reaction: "You told Mr. Whiskers was 'feeling misunderstood.' The owner cried and tipped you $20. Somehow this worked."
+    desc: "Advertise on Craigslist that you can communicate with pets. Charge $40 per reading.",
+    high: { money: 120, dignity: -28, reaction: "You told someone their cat was 'feeling misunderstood.' They cried. They tipped $20. You drove home very quietly." },
+    mid:  { money: 200, dignity: -18, reaction: "You've gotten good at reading owners to read pets. It's basically therapy with a dog present. People love it." },
+    low:  { money: 310, dignity: -7,  reaction: "Fully booked two weeks out. You've started believing a little. Is that better or worse? Doesn't matter. Money's good." }
   },
   {
     name: "Enter a Hot Dog Eating Contest",
-    desc: "Sign up for the town fair competitive eating event. The prize is $500 and a lifetime of regret.",
-    money: 500,
-    dignity: -35,
-    reaction: "You came second. You got $200 and a plastic trophy. Also you'll never eat a hot dog again."
+    desc: "Sign up for the town fair competitive eating event. Prize is $500. Regret is free.",
+    high: { money: 150, dignity: -38, reaction: "You came third. You got a ribbon and $50. The local news filmed it. You are now searchable by name." },
+    mid:  { money: 280, dignity: -25, reaction: "Second place, $200, and a sponsor shoutout from a mustard brand. Your stomach has made peace with this." },
+    low:  { money: 480, dignity: -10, reaction: "First place. $500. Crowd going wild. You feel nothing except hunger again. You signed up for next month." }
   },
   {
-    name: "Work the Gig Economy Grind",
-    desc: "Drive delivery apps, do odd jobs on TaskRabbit, and assemble IKEA furniture for strangers at 10 PM.",
-    money: 260,
-    dignity: -5,
-    reaction: "Honest work, surprisingly. Nobody judged you. You judged yourself a little though."
+    name: "Gig Economy Grind",
+    desc: "Drive delivery apps, do odd jobs, assemble IKEA furniture for strangers at 10 PM.",
+    high: { money: 180, dignity: -5,  reaction: "Honest work. Surprisingly okay. You assembled a KALLAX at midnight and only judged yourself a normal amount." },
+    mid:  { money: 260, dignity: -3,  reaction: "You're efficient now. You know the shortcuts. A customer left a 5-star review calling you 'a professional.' It helped." },
+    low:  { money: 320, dignity: 0,   reaction: "You are the grind. No shame left here, just logistics. You made solid money and feel basically nothing. Efficient." }
   },
   {
     name: "Start a Fake GoFundMe",
     desc: "Claim your imaginary cat needs emergency surgery. Post a stock photo of a sad-looking cat.",
-    money: 450,
-    dignity: -50,
-    reaction: "It worked. People are generous and gullible. You feel terrible. You keep the money."
+    high: { money: 300, dignity: -55, reaction: "It worked. $300 from strangers who believe in Mochi. You feel genuinely terrible. You donate $20 to a cat shelter to cope." },
+    mid:  { money: 480, dignity: -40, reaction: "You added update posts. Mochi is 'doing better.' People are invested. You feel nothing now, which is new." },
+    low:  { money: 650, dignity: -20, reaction: "Mochi has a following. A subreddit. Merch. You created a fictional cat empire and you feel almost proud of the craft." }
   },
   {
     name: "Extreme Coupon Resale",
-    desc: "Spend 6 hours at three different stores buying 40 bottles of mustard on sale, then resell them at a markup.",
-    money: 70,
-    dignity: -10,
-    reaction: "Your car smells like mustard. You made $70. The cashier knows your face now. Not in a good way."
+    desc: "Spend 6 hours at three stores buying 40 bottles of mustard on sale, then resell them at a markup.",
+    high: { money: 50,  dignity: -12, reaction: "Your car smells like mustard. You made $50. The cashier memorized your face. It was not a warm look." },
+    mid:  { money: 90,  dignity: -7,  reaction: "You found a rhythm. You've got a spreadsheet. The cashiers know you but you've stopped caring what they think." },
+    low:  { money: 140, dignity: -2,  reaction: "You wholesale now. You have a storage unit. One guy called you 'an entrepreneur.' You're starting to agree." }
   },
   {
     name: "Beg for Venmo on the Street",
     desc: "Hold a sign: 'Why lie? I need money for stuff.' Include your Venmo QR code.",
-    money: 85,
-    dignity: -28,
-    reaction: "Honesty pays. Not a lot, but hey — no lies."
+    high: { money: 50,  dignity: -32, reaction: "A few people scanned it. You made $50. A woman who recognized you from your office said nothing and walked faster." },
+    mid:  { money: 110, dignity: -20, reaction: "Honesty has a market. You refined the sign. 'Stuff includes rent' tested better. Regulars now." },
+    low:  { money: 190, dignity: -8,  reaction: "You've got a corner. A following. Someone made a TikTok of your sign. You got a $50 donation from a stranger in Ohio." }
   },
   {
     name: "Become a Micro-Influencer",
-    desc: "Post 11 photos of 'your lifestyle' in 3 hours. Apply to every brand deal you can find, no matter how random.",
-    money: 110,
-    dignity: -16,
-    reaction: "A kombucha brand sent you 3 free bottles and $60. You told your followers you 'partnered with them.' It's technically true."
+    desc: "Post 11 photos of 'your lifestyle' in 3 hours. Apply to every brand deal you can find.",
+    high: { money: 80,  dignity: -18, reaction: "A kombucha brand sent you 3 free bottles and $40. You told your followers you 'partnered with them.' You felt hollow." },
+    mid:  { money: 150, dignity: -11, reaction: "You've learned the hashtags. A second brand deal. You know your angles. You've stopped reading your own comments." },
+    low:  { money: 250, dignity: -4,  reaction: "You've optimized yourself completely. You post without thinking. Brands come to you. You are the product and that's fine." }
   },
   {
     name: "Do Actual Freelance Work",
     desc: "Use your skills. Find a real client. Do the job well. Be a professional.",
-    money: 400,
-    dignity: 5,
-    reaction: "They paid on time. You feel strangely good about yourself. This never gets old."
+    high: { money: 350, dignity: 8,   reaction: "They paid on time. Thanked you. Said 'we'd love to work with you again.' You forgot this existed. It felt incredible." },
+    mid:  { money: 400, dignity: 10,  reaction: "A clean project, fair pay, mutual respect. In context, this felt almost spiritual. You remembered who you were." },
+    low:  { money: 450, dignity: 15,  reaction: "This hit differently. You did good work and got paid fairly. Something stirred in your soul. Something dormant. It's called dignity." }
   }
 ];
 
 const TOTAL_ROUNDS = 8;
 const CHOICES_PER_ROUND = 4;
 
-let state = {
-  money: 0,
-  dignity: 100,
-  round: 1,
-  history: [],
-  chosen: false,
-  musicMuted: false
-};
+let state = { money: 0, dignity: 100, round: 1, history: [], chosen: false };
+
+function getTier(dignity) {
+  if (dignity > 60) return 'high';
+  if (dignity >= 20) return 'mid';
+  return 'low';
+}
+
+function getTierLabel(dignity) {
+  if (dignity > 60) return { label: 'Dignified',  cls: 'tier-high' };
+  if (dignity >= 20) return { label: 'Compromised', cls: 'tier-mid' };
+  return { label: 'Shameless', cls: 'tier-low' };
+}
 
 function getDignityColor(pct) {
-  if (pct > 70) return '#4CAF50';
-  if (pct > 40) return '#FFC107';
-  if (pct > 20) return '#FF9800';
+  if (pct > 60) return '#4CAF50';
+  if (pct >= 20) return '#FFC107';
   return '#F44336';
 }
 
@@ -493,7 +320,7 @@ function getDignityEmoji(pct) {
   if (pct > 60) return '😏';
   if (pct > 40) return '😬';
   if (pct > 20) return '😰';
-  if (pct > 5) return '🫠';
+  if (pct > 5)  return '🫠';
   return '💀';
 }
 
@@ -505,6 +332,10 @@ function updateStats() {
   bar.style.width = pct + '%';
   bar.style.background = getDignityColor(pct);
   document.getElementById('round-display').textContent = state.round + ' / ' + TOTAL_ROUNDS;
+  const tl = getTierLabel(pct);
+  const badge = document.getElementById('tier-badge');
+  badge.textContent = tl.label;
+  badge.className = 'dignity-tier-badge ' + tl.cls;
 }
 
 function shuffleArray(arr) {
@@ -520,18 +351,22 @@ function renderChoices() {
   const grid = document.getElementById('choices-grid');
   grid.innerHTML = '';
   const pool = shuffleArray(CHOICES).slice(0, CHOICES_PER_ROUND);
-  pool.forEach((choice, i) => {
+  pool.forEach(choice => {
+    const tier = getTier(state.dignity);
+    const data = choice[tier];
+    const dignitySign = data.dignity >= 0 ? '+' : '';
+    const dignityClass = data.dignity >= 0 ? 'tag-dignity-gain' : 'tag-dignity';
+    const tierHints = { high: 'You still feel this.', mid: 'Getting easier. Worryingly.', low: 'You barely blink.' };
     const btn = document.createElement('button');
     btn.className = 'choice-btn';
-    btn.dataset.index = i;
-    const dignitySign = choice.dignity >= 0 ? '+' : '';
     btn.innerHTML = `
       <div class="choice-name">${choice.name}</div>
       <div class="choice-desc">${choice.desc}</div>
       <div class="choice-tags">
-        <span class="tag tag-money">💰 +$${choice.money}</span>
-        <span class="tag tag-dignity">🪞 ${dignitySign}${choice.dignity}%</span>
+        <span class="tag tag-money">💰 +$${data.money}</span>
+        <span class="tag ${dignityClass}">🪞 ${dignitySign}${data.dignity}%</span>
       </div>
+      <div class="tier-hint">${tierHints[tier]}</div>
     `;
     btn.onclick = () => makeChoice(choice, btn);
     grid.appendChild(btn);
@@ -541,11 +376,11 @@ function renderChoices() {
 function makeChoice(choice, clickedBtn) {
   if (state.chosen) return;
   state.chosen = true;
+  const tier = getTier(state.dignity);
+  const data = choice[tier];
+  state.money += data.money;
+  state.dignity = Math.max(0, Math.min(100, state.dignity + data.dignity));
 
-  state.money += choice.money;
-  state.dignity = Math.max(0, Math.min(100, state.dignity + choice.dignity));
-
-  // Disable all buttons
   document.querySelectorAll('.choice-btn').forEach(b => {
     b.disabled = true;
     b.style.opacity = b === clickedBtn ? '1' : '0.35';
@@ -553,39 +388,23 @@ function makeChoice(choice, clickedBtn) {
   clickedBtn.style.borderColor = '#ffd700';
   clickedBtn.style.background = 'linear-gradient(135deg, #2e2e1a, #3a3a10)';
 
-  document.getElementById('message-box').textContent = choice.reaction;
+  document.getElementById('message-box').textContent = data.reaction;
   updateStats();
+  state.history.push({ round: state.round, name: choice.name, tier, money: data.money, dignity: data.dignity });
+  addLogEntry(choice.name, tier, data);
 
-  const dignityEmoji = getDignityEmoji(state.dignity);
-  state.history.push({
-    round: state.round,
-    name: choice.name,
-    money: choice.money,
-    dignity: choice.dignity,
-    dignityLeft: state.dignity
-  });
-
-  addLogEntry(choice);
-
-  if (state.dignity <= 0) {
-    setTimeout(() => endGame('dignity'), 800);
-    return;
-  }
-
-  if (state.round >= TOTAL_ROUNDS) {
-    setTimeout(() => endGame('complete'), 800);
-    return;
-  }
-
+  if (state.dignity <= 0) { setTimeout(() => endGame('dignity'), 800); return; }
+  if (state.round >= TOTAL_ROUNDS) { setTimeout(() => endGame('complete'), 800); return; }
   document.getElementById('btn-next').style.display = 'inline-block';
 }
 
-function addLogEntry(choice) {
+function addLogEntry(name, tier, data) {
   const log = document.getElementById('history-log');
-  const dignitySign = choice.dignity >= 0 ? '+' : '';
+  const dignitySign = data.dignity >= 0 ? '+' : '';
+  const tierColors = { high: '#6dff6d', mid: '#ffc84a', low: '#ff6060' };
   const div = document.createElement('div');
   div.className = 'log-entry';
-  div.innerHTML = `Round ${state.round}: <strong>${choice.name}</strong> → <span class="log-money">+$${choice.money}</span> / <span class="log-dignity">${dignitySign}${choice.dignity}% dignity</span>`;
+  div.innerHTML = `Round ${state.round}: <strong>${name}</strong> <span style="color:${tierColors[tier]};font-size:0.65rem;">[${tier}]</span> → <span class="log-money">+$${data.money}</span> / <span class="log-dignity">${dignitySign}${data.dignity}%</span>`;
   log.prepend(div);
 }
 
@@ -593,8 +412,9 @@ function nextRound() {
   state.round++;
   state.chosen = false;
   document.getElementById('btn-next').style.display = 'none';
+  const tierLabel = getTierLabel(state.dignity);
   document.getElementById('round-info').textContent = `Round ${state.round} of ${TOTAL_ROUNDS} — pick one action`;
-  document.getElementById('message-box').textContent = `Round ${state.round}. Dignity at ${Math.round(state.dignity)}%. The grind continues...`;
+  document.getElementById('message-box').textContent = `Round ${state.round}. Dignity: ${Math.round(state.dignity)}% (${tierLabel.label}). The hustle continues.`;
   updateStats();
   renderChoices();
 }
@@ -604,13 +424,10 @@ function endGame(reason) {
   document.getElementById('btn-next').style.display = 'none';
   document.getElementById('round-info').style.display = 'none';
   document.getElementById('message-box').style.display = 'none';
-
   const endScreen = document.getElementById('end-screen');
   endScreen.style.display = 'flex';
-
   const endTitle = document.getElementById('end-title');
   const endSummary = document.getElementById('end-summary');
-
   if (reason === 'dignity') {
     endTitle.textContent = 'DIGNITY: ZERO';
     endTitle.className = 'end-title lose';
@@ -619,30 +436,29 @@ function endGame(reason) {
       <strong>Final Bank Account:</strong> $${state.money.toLocaleString()}<br>
       <strong>Dignity Remaining:</strong> 0% 💀<br>
       <strong>Rounds Survived:</strong> ${state.round} / ${TOTAL_ROUNDS}<br><br>
-      <em>You have the money but lost something that can't be bought back.<br>Congratulations, I guess?</em>
+      <em>The money is real. The you that cared is gone. These things happened in that order.</em>
     `;
   } else {
-    const score = state.money - (100 - state.dignity) * 5;
-    let verdict = '';
-    if (state.dignity > 70) verdict = 'You kept your integrity AND made money. Suspicious.';
-    else if (state.dignity > 40) verdict = 'Battered but not broken. Mostly.';
-    else if (state.dignity > 15) verdict = 'Your soul has seen better days but your wallet is thicc.';
-    else verdict = 'You are one step from dignity zero. But rich. Was it worth it?';
+    const finalTier = getTierLabel(state.dignity);
+    const verdicts = {
+      high: "You made money and kept your soul mostly intact. Are you even playing correctly?",
+      mid:  "Battered. Compromised. Functional. The rent is paid and the mirror is slightly harder to face.",
+      low:  "You have the money and the hollow eyes of someone who has stopped counting the cost. Impressive, in its own way."
+    };
     endTitle.textContent = 'GAME OVER';
     endTitle.className = 'end-title win';
     endSummary.innerHTML = `
       <strong>Final Bank Account:</strong> $${state.money.toLocaleString()} 💰<br>
       <strong>Dignity Remaining:</strong> ${Math.round(state.dignity)}% ${getDignityEmoji(state.dignity)}<br>
-      <strong>Hustle Score:</strong> ${score.toLocaleString()}<br><br>
-      <em>${verdict}</em>
+      <strong>Final Status:</strong> <span style="font-weight:900">${finalTier.label}</span><br><br>
+      <em>${verdicts[getTier(state.dignity)]}</em>
     `;
   }
-
   document.getElementById('btn-restart').style.display = 'inline-block';
 }
 
 function restartGame() {
-  state = { money: 0, dignity: 100, round: 1, history: [], chosen: false, musicMuted: state.musicMuted };
+  state = { money: 0, dignity: 100, round: 1, history: [], chosen: false };
   document.getElementById('end-screen').style.display = 'none';
   document.getElementById('btn-restart').style.display = 'none';
   document.getElementById('round-info').style.display = 'block';
@@ -657,30 +473,18 @@ function restartGame() {
 function toggleMusic() {
   const audio = document.getElementById('bg-music');
   const btn = document.getElementById('music-btn');
-  if (audio.paused) {
-    audio.play();
-    btn.textContent = '🎵';
-    btn.title = 'Mute music';
-  } else {
-    audio.pause();
-    btn.textContent = '🔇';
-    btn.title = 'Play music';
-  }
+  if (audio.paused) { audio.play(); btn.textContent = '🎵'; }
+  else { audio.pause(); btn.textContent = '🔇'; }
 }
 
 function initMusic() {
   const audio = document.getElementById('bg-music');
   audio.volume = 0.45;
-  const tryPlay = () => {
-    audio.play().catch(() => {});
-    document.removeEventListener('click', tryPlay);
-    document.removeEventListener('keydown', tryPlay);
-  };
+  const tryPlay = () => { audio.play().catch(() => {}); document.removeEventListener('click', tryPlay); document.removeEventListener('keydown', tryPlay); };
   document.addEventListener('click', tryPlay);
   document.addEventListener('keydown', tryPlay);
 }
 
-// Init
 updateStats();
 renderChoices();
 initMusic();
